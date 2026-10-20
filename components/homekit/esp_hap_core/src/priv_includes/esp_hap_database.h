@@ -36,7 +36,9 @@
 #define HAP_KEYSTORE_NAMESPACE_HAPMAIN  "hap_main"
 #define HAP_FACTORY_NAMESPACE_HAP_SETUP "hap_setup"
 
-#define HAP_MAX_SESSIONS	8
+/* Lytko: 8 -> 16 — каждое устройство Apple в доме держит свою сессию, восьми не хватало.
+   Массив — указатели (статика +8 слов), сессии в куче. */
+#define HAP_MAX_SESSIONS	16
 #define SETUP_ID_LEN        4
 #define SETUP_HASH_LEN      4
 
